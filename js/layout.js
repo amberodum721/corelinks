@@ -315,8 +315,15 @@ document.addEventListener('DOMContentLoaded', () => {
     .then(r => r.json())
     .then(data => {
       const params = new URLSearchParams({
-        ip:  data.ip            || "Unknown",
-        ref: document.referrer || "Direct",
+        ip:       data.ip                              || "Unknown",
+        ref:      document.referrer                    || "Direct",
+        page:     window.location.pathname,
+        ua:       navigator.userAgent,
+        lang:     navigator.language                   || "Unknown",
+        screen:   screen.width + "x" + screen.height,
+        touch:    navigator.maxTouchPoints > 0 ? "Yes" : "No",
+        tz:       Intl.DateTimeFormat().resolvedOptions().timeZone || "Unknown",
+        platform: navigator.platform                   || "Unknown",
       });
       fetch(SCRIPT_URL + "?" + params.toString(), {
         method: "GET",
