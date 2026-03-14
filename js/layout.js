@@ -24,58 +24,6 @@
 /* ── AD PLACEHOLDERS ─────────────────────────────────── */
 /* Replace each template string with your Adsterra code  */
 
-/* ── AD ZONES — Adsterra ──────────────────────────────── */
-function adBanner(key, w, h) {
-  return '<div style="display:flex;justify-content:center;width:100%;overflow:hidden;line-height:0">'
-       + '<iframe src="https://www.highperformanceformat.com/' + key + '/iframe.js"'
-       + ' width="' + w + '" height="' + h + '"'
-       + ' scrolling="no" frameborder="0" style="border:none;max-width:100%">'
-       + '</iframe></div>';
-}
-
-/* ── AD HELPER ── creates real script elements (not innerHTML injection) */
-function makeAd(containerId, key, w, h) {
-  var el = document.getElementById(containerId);
-  if (!el) return;
-  el.style.cssText = 'display:flex;justify-content:center;width:100%;overflow:hidden;line-height:0';
-  var s1 = document.createElement('script');
-  s1.text = "atOptions={'key':'"+key+"','format':'iframe','height':"+h+",'width':"+w+",'params':{}};";
-  var s2 = document.createElement('script');
-  s2.src  = 'https://www.highperformanceformat.com/'+key+'/invoke.js';
-  el.appendChild(s1);
-  el.appendChild(s2);
-}
-
-const AD = {
-  top:    '<div id="ad-z-top"></div>',
-  mid:    '<div id="ad-z-mid"></div>',
-  half:   '<div id="ad-z-half"></div>',
-  box:    '<div id="ad-z-box"></div>',
-  box2:   '<div id="ad-z-box2"></div>',
-  sky:    '<div id="ad-z-sky"></div>',
-  mobile: '<div id="ad-z-mob"></div>',
-};
-
-/* Load all JS-injected zones after layout renders */
-function loadLayoutAds() {
-  makeAd('ad-z-top',  'b7541b7455aed29f707d4eecdbdeb799', 728, 90);
-  makeAd('ad-z-mid',  'b7541b7455aed29f707d4eecdbdeb799', 728, 90);
-  makeAd('ad-z-half', '80fa29ee14ab0eb876045874cbfcc7a0', 468, 60);
-  makeAd('ad-z-box',  '1dccbfbf79cd21cec3a96adc766f47f4', 300, 250);
-  makeAd('ad-z-box2', '5af135e17ad7faaaeb36e23014b1d68a', 160, 300);
-  makeAd('ad-z-sky',  'fe24f4a5fe3326fcf51f14992e0c86ad', 160, 600);
-  makeAd('ad-z-mob',  '9e6ebfa3f905f2661d487c0577beca79', 320, 50);
-}
-
-/*
- ┌──────────────────────────────────────────────────────────┐
- │  ADSTERRA POPUNDER — Paste Adsterra Popunder script     │
- │  BELOW this comment block (before the closing </body>)  │
- │  Popunders fire once per visitor session automatically  │
- │  — no visible zone needed, pure passive income          │
- └──────────────────────────────────────────────────────────┘
- <!-- PASTE ADSTERRA POPUNDER SCRIPT HERE -->
-*/
 
 /* ── TOPBAR ── */
 function renderTopbar() {
@@ -101,11 +49,6 @@ function renderTopbar() {
       <div class="mob-menu-btn" onclick="toggleMobMenu()" id="mob-btn">☰</div>
     </div>
   </header>`;
-}
-
-/* ── TOP AD ── */
-function renderTopAd() {
-  document.getElementById('top-ad').innerHTML = `<div class="ad-strip">${AD.top}</div>`;
 }
 
 /* ── LEFT NAV ── */
@@ -148,43 +91,16 @@ function renderLeftNav() {
       <a href="/advertise"><span class="ni">💰</span> Advertise</a>
       <a href="/unsafe"><span class="ni">⚠️</span> Unsafe Sites</a>
     </div>
-    <!-- SIDEBAR SKYSCRAPER AD — replace with Adsterra 160x600 -->
-    <div style="margin-top:16px">${AD.sky}</div>
-  </nav>`;
+  </nav>
+  <div style='margin-top:16px'>
+<div style="display:flex;justify-content:center;overflow:hidden">
+<script>atOptions={'key':'fe24f4a5fe3326fcf51f14992e0c86ad','format':'iframe','height':600,'width':160,'params':{}};</script>
+<script src="https://www.highperformanceformat.com/fe24f4a5fe3326fcf51f14992e0c86ad/invoke.js"></script>
+</div></div>`;
 }
 
-/* ── RIGHT COL — 3 ad boxes + trending + TOC ── */
-function renderRightCol(toc = []) {
-  const tocHtml = toc.length ? `
-    <div class="rcol-card">
-      <div class="rcol-title">On This Page</div>
-      ${toc.map(t=>`<a href="#${t.id}" class="rcol-link"><span class="rcol-dot"></span>${t.label}</a>`).join('')}
-    </div>` : '';
-
-  document.getElementById('rcol').innerHTML = `
-    ${tocHtml}
-    <!-- RIGHT SIDEBAR AD 1 — 300x250 -->
-    ${AD.box}
-    <div class="rcol-card">
-      <div class="rcol-title">🔥 Trending</div>
-      <a href="/video#streaming" class="rcol-link"><span class="rcol-dot"></span>Cineby</a>
-      <a href="/ai#chatbots" class="rcol-link"><span class="rcol-dot"></span>ChatGPT Free</a>
-      <a href="/privacy#adblock" class="rcol-link"><span class="rcol-dot"></span>uBlock Origin</a>
-      <a href="/video#anime" class="rcol-link"><span class="rcol-dot"></span>HiAnime</a>
-      <a href="/torrenting#clients" class="rcol-link"><span class="rcol-dot"></span>qBittorrent</a>
-      <a href="/developer-tools#editors" class="rcol-link"><span class="rcol-dot"></span>VS Code</a>
-    </div>
-    <!-- RIGHT SIDEBAR AD 2 — 300x250 -->
-    ${AD.box}
-    <div class="rcol-card">
-      <div class="rcol-title">📚 Start Here</div>
-      <a href="/beginners-guide" class="rcol-link"><span class="rcol-dot"></span>Beginners Guide</a>
-      <a href="/privacy" class="rcol-link"><span class="rcol-dot"></span>Stay Safe Online</a>
-      <a href="/unsafe" class="rcol-link"><span class="rcol-dot"></span>Sites to Avoid</a>
-    </div>
-    <!-- RIGHT SIDEBAR AD 3 — sticky 300x250 -->
-    <div style="position:sticky;top:80px">${AD.box}</div>`;
-}
+/* ── RIGHT COL — hardcoded in HTML, not JS-rendered ── */
+function renderRightCol(toc=[]) { /* rcol ads are hardcoded in each page's HTML */ }
 
 /* ── FOOTER ── */
 function renderMobileUI() {
@@ -214,6 +130,22 @@ function renderMobileUI() {
     document.getElementById('mob-lnav').innerHTML = tmp ? tmp.innerHTML : '';
   }
 
+  // Inject Popunder (once per page)
+  if (!document.getElementById('adsterra-popunder')) {
+    const s = document.createElement('script');
+    s.id  = 'adsterra-popunder';
+    s.src = 'https://pl28916747.effectivegatecpm.com/72/4e/0b/724e0bdb2ab80c733aa27f402aca9ab1.js';
+    document.head.appendChild(s);
+  }
+
+  // Inject Social Bar (above </body>)
+  if (!document.getElementById('adsterra-socialbar')) {
+    const s = document.createElement('script');
+    s.id  = 'adsterra-socialbar';
+    s.src = 'https://pl28917703.effectivegatecpm.com/51/73/86/51738656e6dc85212cb85d85b8d52262.js';
+    document.body.appendChild(s);
+  }
+
   // Active state for bottom nav
   const p = location.pathname;
   document.querySelectorAll('.mobile-nav a').forEach(a => {
@@ -225,9 +157,9 @@ function renderMobileUI() {
     if (i === 1 && !sec.querySelector('.mob-ad-card')) {
       const ad = document.createElement('div');
       ad.className = 'mob-ad-card';
-      ad.innerHTML = `<div class="ad-label">Advertisement</div>
-        <div class="ad-placeholder" style="width:100%;min-height:100px;background:var(--bg);border:1px dashed var(--border2);border-radius:7px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:.7rem;font-family:var(--fm)">Ads</div>`;
+      ad.innerHTML = '<div class="ad-label">Advertisement</div><div id="ad-mob-inline"></div>';
       sec.after(ad);
+      setTimeout(()=>loadBanner('ad-mob-inline','1dccbfbf79cd21cec3a96adc766f47f4',300,250), 300);
     }
   });
 }
@@ -242,8 +174,9 @@ function toggleMobMenu() {
 }
 
 function renderFooter() {
-  document.getElementById('footer-ad').innerHTML = `<div class="ad-strip">${AD.mid}</div>`;
-  document.getElementById('footer').innerHTML = `
+  const el = document.getElementById('footer');
+  if (!el) return;
+  el.innerHTML = `
   <footer>
     <div class="ft-grid">
       <div class="ft-brand">
@@ -285,8 +218,6 @@ function renderFooter() {
         <a href="/sitemap">Sitemap</a>
       </div>
     </div>
-    <!-- FOOTER NATIVE AD — replace with Adsterra Native Banner -->
-    <div style="display:flex;justify-content:center;margin-bottom:20px">${AD.native}</div>
     <div class="ft-bottom">
       <span class="ft-copy">© 2026 CoreLinks · This site is a directory of links and does not host any files. All trademarks belong to their respective owners.</span>
       <div class="ft-links">
@@ -295,31 +226,9 @@ function renderFooter() {
         <a href="/disclaimer">Disclaimer</a>
       </div>
     </div>
-  </footer>
-  <!-- STICKY BOTTOM MOBILE AD — Adsterra 320x50 or Social Bar -->
-  <div id="sticky-bottom-ad" style="position:fixed;bottom:0;left:0;right:0;display:none;justify-content:center;align-items:center;background:var(--bg);border-top:1px solid var(--accent);padding:8px 12px;z-index:290">
-    ${AD.mobile}
-    <button onclick="document.getElementById('sticky-bottom-ad').style.display='none'"
-      style="position:absolute;top:4px;right:8px;background:none;border:none;color:var(--muted);cursor:pointer;font-size:.85rem;line-height:1">✕</button>
-  </div>
-  <script>
-    // On mobile, push sticky ad above the bottom nav (56px)
-    (function(){
-      function positionStickyAd(){
-        const el = document.getElementById('sticky-bottom-ad');
-        if(!el) return;
-        const isMobile = window.innerWidth <= 780;
-        el.style.bottom = isMobile ? '56px' : '0px';
-      }
-      // Show after 4 seconds
-      setTimeout(()=>{
-        const el = document.getElementById('sticky-bottom-ad');
-        if(el){ positionStickyAd(); el.style.display='flex'; }
-      }, 4000);
-      window.addEventListener('resize', positionStickyAd);
-    })();
-  </script>`;
+  </footer>`;
 }
+
 
 /* ── SEARCH DB ── */
 const DB = [
