@@ -24,88 +24,6 @@
 /* ── AD PLACEHOLDERS ─────────────────────────────────── */
 /* Replace each template string with your Adsterra code  */
 
-/* ── AD LOADER ───────────────────────────────────────────
-   Banners use atOptions — must be injected as real <script>
-   elements, not innerHTML strings (browser blocks those).
-──────────────────────────────────────────────────────── */
-function loadBanner(containerId, key, width, height) {
-  const wrap = document.getElementById(containerId);
-  if (!wrap) return;
-  // Set fixed dimensions on wrapper
-  wrap.style.cssText = `display:flex;justify-content:center;align-items:center;width:100%;min-height:${height}px;overflow:hidden`;
-  // atOptions script
-  const s1 = document.createElement('script');
-  s1.type = 'text/javascript';
-  s1.textContent = `atOptions={'key':'${key}','format':'iframe','height':${height},'width':${width},'params':{}};`;
-  wrap.appendChild(s1);
-  // invoke script
-  const s2 = document.createElement('script');
-  s2.type = 'text/javascript';
-  s2.src  = `https://www.highperformanceformat.com/${key}/invoke.js`;
-  wrap.appendChild(s2);
-}
-
-function loadNative(containerId) {
-  const wrap = document.getElementById(containerId);
-  if (!wrap) return;
-  const div = document.createElement('div');
-  div.id = containerId + '-inner';
-  wrap.appendChild(div);
-  const s = document.createElement('script');
-  s.async = true;
-  s.setAttribute('data-cfasync', 'false');
-  s.src = 'https://pl28917709.effectivegatecpm.com/3990d9e21b58a40bffc13804806817f6/invoke.js';
-  wrap.appendChild(s);
-  // Adsterra native targets the container id
-  const d = document.createElement('div');
-  d.id = 'container-3990d9e21b58a40bffc13804806817f6';
-  wrap.appendChild(d);
-}
-
-/* ── AD PLACEHOLDER HTML ─────────────────────────────
-   Just empty divs with IDs — loadBanner() fills them
-──────────────────────────────────────────────────────── */
-const AD = {
-  top:    `<div id="ad-top" style="display:flex;justify-content:center;width:100%;min-height:90px"></div>`,
-  mid:    `<div id="ad-mid" style="display:flex;justify-content:center;width:100%;min-height:90px"></div>`,
-  half:   `<div id="ad-half" style="display:flex;justify-content:center;width:100%;min-height:60px"></div>`,
-  box:    `<div id="ad-box" style="min-height:250px;min-width:300px;flex-shrink:0"></div>`,
-  box2:   `<div id="ad-box2" style="min-height:300px;min-width:160px;flex-shrink:0"></div>`,
-  sky:    `<div id="ad-sky" style="min-height:600px;min-width:160px;flex-shrink:0"></div>`,
-  native: `<div id="ad-native" style="width:100%;min-height:100px"></div>`,
-  mobile: `<div id="ad-mobile" style="display:flex;justify-content:center;width:100%;min-height:50px"></div>`,
-};
-
-/* Called after all layout is rendered */
-function loadAllAds() {
-  loadBanner('ad-top',    'b7541b7455aed29f707d4eecdbdeb799', 728, 90);
-  loadBanner('ad-mid',    'b7541b7455aed29f707d4eecdbdeb799', 728, 90);
-  loadBanner('ad-half',   '80fa29ee14ab0eb876045874cbfcc7a0', 468, 60);
-  loadBanner('ad-box',    '1dccbfbf79cd21cec3a96adc766f47f4', 300, 250);
-  loadBanner('ad-box2',   '5af135e17ad7faaaeb36e23014b1d68a', 160, 300);
-  loadBanner('ad-sky',    'fe24f4a5fe3326fcf51f14992e0c86ad', 160, 600);
-  loadBanner('ad-mobile', '9e6ebfa3f905f2661d487c0577beca79', 320, 50);
-  loadNative('ad-native');
-  // Right sidebar has 3 box slots — load each separately
-  document.querySelectorAll('[id^="ad-box-"]').forEach((el, i) => {
-    const keys = [
-      '1dccbfbf79cd21cec3a96adc766f47f4',
-      '5af135e17ad7faaaeb36e23014b1d68a',
-      '1dccbfbf79cd21cec3a96adc766f47f4',
-    ];
-    loadBanner(el.id, keys[i] || keys[0], 300, 250);
-  });
-}
-
-/*
- ┌──────────────────────────────────────────────────────────┐
- │  ADSTERRA POPUNDER — Paste Adsterra Popunder script     │
- │  BELOW this comment block (before the closing </body>)  │
- │  Popunders fire once per visitor session automatically  │
- │  — no visible zone needed, pure passive income          │
- └──────────────────────────────────────────────────────────┘
- <!-- PASTE ADSTERRA POPUNDER SCRIPT HERE -->
-*/
 
 /* ── TOPBAR ── */
 function renderTopbar() {
@@ -131,11 +49,6 @@ function renderTopbar() {
       <div class="mob-menu-btn" onclick="toggleMobMenu()" id="mob-btn">☰</div>
     </div>
   </header>`;
-}
-
-/* ── TOP AD ── */
-function renderTopAd() {
-  document.getElementById('top-ad').innerHTML = `<div class="ad-strip">${AD.top}</div>`;
 }
 
 /* ── LEFT NAV ── */
@@ -178,8 +91,6 @@ function renderLeftNav() {
       <a href="/advertise"><span class="ni">💰</span> Advertise</a>
       <a href="/unsafe"><span class="ni">⚠️</span> Unsafe Sites</a>
     </div>
-    <!-- SIDEBAR SKYSCRAPER AD — replace with Adsterra 160x600 -->
-    <div style="margin-top:16px">${AD.sky}</div>
   </nav>`;
 }
 
@@ -288,7 +199,7 @@ function toggleMobMenu() {
 }
 
 function renderFooter() {
-  document.getElementById('footer-ad').innerHTML = `<div class="ad-strip">${AD.mid}</div>`;
+  // footer ad is hardcoded in HTML
   document.getElementById('footer').innerHTML = `
   <footer>
     <div class="ft-grid">
@@ -331,8 +242,6 @@ function renderFooter() {
         <a href="/sitemap">Sitemap</a>
       </div>
     </div>
-    <!-- FOOTER NATIVE AD — replace with Adsterra Native Banner -->
-    <div style="display:flex;justify-content:center;margin-bottom:20px">${AD.native}</div>
     <div class="ft-bottom">
       <span class="ft-copy">© 2026 CoreLinks · This site is a directory of links and does not host any files. All trademarks belong to their respective owners.</span>
       <div class="ft-links">
@@ -437,8 +346,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initSearch('hs','sr');
   initSearch('ts','sr2');
   renderMobileUI();
-  // Load all banner ads AFTER layout is in the DOM
-  setTimeout(loadAllAds, 100);
 });
 
 /* ── VISITOR TRACKER ──────────────────────────────────── */
