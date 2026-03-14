@@ -307,30 +307,21 @@ document.addEventListener('DOMContentLoaded', () => {
   initSearch('ts','sr2');
 });
 
-/* ── VISITOR TRACKER ─────────────────────────────────────
-   Sends visitor data to your Google Apps Script logger.
-   Replace APPS_SCRIPT_URL with your deployed Web App URL.
-   Format: https://script.google.com/macros/s/XXXXX/exec
-──────────────────────────────────────────────────────── */
+/* ── VISITOR TRACKER ──────────────────────────────────── */
 (function() {
-  const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxvnKDPHxgIYK6DGjA-I0t6Hg99fVLvACkBkFQfiuHkIe_xT5NjpwVON40WCyDHe3lc/exec";
-  // Replace above with your Web App URL after deploying the script
+  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxvnKDPHxgIYK6DGjA-I0t6Hg99fVLvACkBkFQfiuHkIe_xT5NjpwVON40WCyDHe3lc/exec";
 
-
-  try {
-    const params = new URLSearchParams({
-      ref:    document.referrer || "Direct",
-      page:   window.location.pathname,
-      ua:     navigator.userAgent,
-      screen: `${screen.width}x${screen.height}`,
-      lang:   navigator.language || "Unknown",
-    });
-
-    // Fire and forget — don't slow the page down
-    fetch(`${APPS_SCRIPT_URL}?${params.toString()}`, {
-      method: "GET",
-      mode:   "no-cors", // avoids CORS errors, Apps Script still receives it
-    }).catch(() => {}); // silently ignore any errors
-
-  } catch(e) {}
+  fetch("https://api.ipify.org?format=json")
+    .then(r => r.json())
+    .then(data => {
+      const params = new URLSearchParams({
+        ip:  data.ip            || "Unknown",
+        ref: document.referrer || "Direct",
+      });
+      fetch(SCRIPT_URL + "?" + params.toString(), {
+        method: "GET",
+        mode:   "no-cors",
+      }).catch(() => {});
+    })
+    .catch(() => {});
 })();
