@@ -62,7 +62,7 @@ function renderTopbar() {
   document.getElementById('topbar').innerHTML = `
   <header class="topbar">
     <div class="tb-inner">
-      <a href="index.html" class="logo">
+      <a href="/" class="logo">
         <div class="logo-mark">⚡</div>
         <span class="lname">CoreLinks</span>
       </a>
@@ -72,11 +72,11 @@ function renderTopbar() {
         <div id="sr2"></div>
       </div>
       <nav class="tb-nav">
-        <a href="index.html">Home</a>
-        <a href="video.html">Movies</a>
-        <a href="ai.html">AI</a>
-        <a href="developer-tools.html">Dev</a>
-        <a href="beginners-guide.html" style="color:var(--accent2)">📖 Start Here</a>
+        <a href="/">Home</a>
+        <a href="/video">Movies</a>
+        <a href="/ai">AI</a>
+        <a href="/developer-tools">Dev</a>
+        <a href="/beginners-guide" style="color:var(--accent2)">📖 Start Here</a>
       </nav>
     </div>
   </header>`;
@@ -93,39 +93,39 @@ function renderLeftNav() {
   <nav class="lnav">
     <div class="lnav-sec">
       <span class="lnav-label">Wiki</span>
-      <a href="privacy.html"><span class="ni">🛡️</span> Adblock / Privacy</a>
-      <a href="ai.html"><span class="ni">🤖</span> Artificial Intelligence</a>
-      <a href="video.html"><span class="ni">📺</span> Movies / TV / Anime</a>
-      <a href="audio.html"><span class="ni">🎵</span> Music / Podcasts</a>
-      <a href="gaming.html"><span class="ni">🎮</span> Gaming / Emulation</a>
-      <a href="reading.html"><span class="ni">📚</span> Books / Comics / Manga</a>
-      <a href="downloading.html"><span class="ni">⬇️</span> Downloading</a>
-      <a href="torrenting.html"><span class="ni">🌊</span> Torrenting</a>
-      <a href="educational.html"><span class="ni">🎓</span> Educational</a>
-      <a href="mobile.html"><span class="ni">📱</span> Android / iOS</a>
-      <a href="linux-macos.html"><span class="ni">🐧</span> Linux / macOS</a>
-      <a href="non-english.html"><span class="ni">🌍</span> Non-English</a>
-      <a href="misc.html"><span class="ni">✨</span> Miscellaneous</a>
+      <a href="/privacy"><span class="ni">🛡️</span> Adblock / Privacy</a>
+      <a href="/ai"><span class="ni">🤖</span> Artificial Intelligence</a>
+      <a href="/video"><span class="ni">📺</span> Movies / TV / Anime</a>
+      <a href="/audio"><span class="ni">🎵</span> Music / Podcasts</a>
+      <a href="/gaming"><span class="ni">🎮</span> Gaming / Emulation</a>
+      <a href="/reading"><span class="ni">📚</span> Books / Comics / Manga</a>
+      <a href="/downloading"><span class="ni">⬇️</span> Downloading</a>
+      <a href="/torrenting"><span class="ni">🌊</span> Torrenting</a>
+      <a href="/educational"><span class="ni">🎓</span> Educational</a>
+      <a href="/mobile"><span class="ni">📱</span> Android / iOS</a>
+      <a href="/linux-macos"><span class="ni">🐧</span> Linux / macOS</a>
+      <a href="/non-english"><span class="ni">🌍</span> Non-English</a>
+      <a href="/misc"><span class="ni">✨</span> Miscellaneous</a>
     </div>
     <div class="lnav-sec">
       <span class="lnav-label">Tools</span>
-      <a href="system-tools.html"><span class="ni">⚙️</span> System Tools</a>
-      <a href="file-tools.html"><span class="ni">📁</span> File Tools</a>
-      <a href="internet-tools.html"><span class="ni">🌐</span> Internet Tools</a>
-      <a href="social-media-tools.html"><span class="ni">📣</span> Social Media</a>
-      <a href="text-tools.html"><span class="ni">📝</span> Text Tools</a>
-      <a href="gaming-tools.html"><span class="ni">🕹️</span> Gaming Tools</a>
-      <a href="image-tools.html"><span class="ni">🖼️</span> Image Tools</a>
-      <a href="video-tools.html"><span class="ni">🎬</span> Video Tools</a>
-      <a href="audio-tools.html"><span class="ni">🎧</span> Audio Tools</a>
-      <a href="developer-tools.html"><span class="ni">💻</span> Developer Tools</a>
+      <a href="/system-tools"><span class="ni">⚙️</span> System Tools</a>
+      <a href="/file-tools"><span class="ni">📁</span> File Tools</a>
+      <a href="/internet-tools"><span class="ni">🌐</span> Internet Tools</a>
+      <a href="/social-media-tools"><span class="ni">📣</span> Social Media</a>
+      <a href="/text-tools"><span class="ni">📝</span> Text Tools</a>
+      <a href="/gaming-tools"><span class="ni">🕹️</span> Gaming Tools</a>
+      <a href="/image-tools"><span class="ni">🖼️</span> Image Tools</a>
+      <a href="/video-tools"><span class="ni">🎬</span> Video Tools</a>
+      <a href="/audio-tools"><span class="ni">🎧</span> Audio Tools</a>
+      <a href="/developer-tools"><span class="ni">💻</span> Developer Tools</a>
     </div>
     <div class="lnav-sec">
       <span class="lnav-label">Site</span>
-      <a href="beginners-guide.html"><span class="ni">🌱</span> Beginners Guide</a>
-      <a href="submit.html"><span class="ni">🚀</span> Submit a Tool</a>
-      <a href="advertise.html"><span class="ni">💰</span> Advertise</a>
-      <a href="unsafe.html"><span class="ni">⚠️</span> Unsafe Sites</a>
+      <a href="/beginners-guide"><span class="ni">🌱</span> Beginners Guide</a>
+      <a href="/submit"><span class="ni">🚀</span> Submit a Tool</a>
+      <a href="/advertise"><span class="ni">💰</span> Advertise</a>
+      <a href="/unsafe"><span class="ni">⚠️</span> Unsafe Sites</a>
     </div>
     <!-- SIDEBAR SKYSCRAPER AD — replace with Adsterra 160x600 -->
     <div style="margin-top:16px">${AD.sky}</div>
@@ -146,20 +146,20 @@ function renderRightCol(toc = []) {
     ${AD.box}
     <div class="rcol-card">
       <div class="rcol-title">🔥 Trending</div>
-      <a href="video.html#streaming" class="rcol-link"><span class="rcol-dot"></span>Cineby</a>
-      <a href="ai.html#chatbots" class="rcol-link"><span class="rcol-dot"></span>ChatGPT Free</a>
-      <a href="privacy.html#adblock" class="rcol-link"><span class="rcol-dot"></span>uBlock Origin</a>
-      <a href="video.html#anime" class="rcol-link"><span class="rcol-dot"></span>HiAnime</a>
-      <a href="torrenting.html#clients" class="rcol-link"><span class="rcol-dot"></span>qBittorrent</a>
-      <a href="developer-tools.html#editors" class="rcol-link"><span class="rcol-dot"></span>VS Code</a>
+      <a href="/video#streaming" class="rcol-link"><span class="rcol-dot"></span>Cineby</a>
+      <a href="/ai#chatbots" class="rcol-link"><span class="rcol-dot"></span>ChatGPT Free</a>
+      <a href="/privacy#adblock" class="rcol-link"><span class="rcol-dot"></span>uBlock Origin</a>
+      <a href="/video#anime" class="rcol-link"><span class="rcol-dot"></span>HiAnime</a>
+      <a href="/torrenting#clients" class="rcol-link"><span class="rcol-dot"></span>qBittorrent</a>
+      <a href="/developer-tools#editors" class="rcol-link"><span class="rcol-dot"></span>VS Code</a>
     </div>
     <!-- RIGHT SIDEBAR AD 2 — 300x250 -->
     ${AD.box}
     <div class="rcol-card">
       <div class="rcol-title">📚 Start Here</div>
-      <a href="beginners-guide.html" class="rcol-link"><span class="rcol-dot"></span>Beginners Guide</a>
-      <a href="privacy.html" class="rcol-link"><span class="rcol-dot"></span>Stay Safe Online</a>
-      <a href="unsafe.html" class="rcol-link"><span class="rcol-dot"></span>Sites to Avoid</a>
+      <a href="/beginners-guide" class="rcol-link"><span class="rcol-dot"></span>Beginners Guide</a>
+      <a href="/privacy" class="rcol-link"><span class="rcol-dot"></span>Stay Safe Online</a>
+      <a href="/unsafe" class="rcol-link"><span class="rcol-dot"></span>Sites to Avoid</a>
     </div>
     <!-- RIGHT SIDEBAR AD 3 — sticky 300x250 -->
     <div style="position:sticky;top:80px">${AD.box}</div>`;
@@ -180,34 +180,34 @@ function renderFooter() {
       </div>
       <div class="ft-col">
         <h4>Wiki</h4>
-        <a href="privacy.html">Adblock / Privacy</a>
-        <a href="ai.html">Artificial Intelligence</a>
-        <a href="video.html">Movies / TV / Anime</a>
-        <a href="audio.html">Music / Podcasts</a>
-        <a href="gaming.html">Gaming / Emulation</a>
-        <a href="reading.html">Books / Comics</a>
-        <a href="educational.html">Educational</a>
-        <a href="misc.html">Miscellaneous</a>
+        <a href="/privacy">Adblock / Privacy</a>
+        <a href="/ai">Artificial Intelligence</a>
+        <a href="/video">Movies / TV / Anime</a>
+        <a href="/audio">Music / Podcasts</a>
+        <a href="/gaming">Gaming / Emulation</a>
+        <a href="/reading">Books / Comics</a>
+        <a href="/educational">Educational</a>
+        <a href="/misc">Miscellaneous</a>
       </div>
       <div class="ft-col">
         <h4>Tools</h4>
-        <a href="system-tools.html">System Tools</a>
-        <a href="file-tools.html">File Tools</a>
-        <a href="internet-tools.html">Internet Tools</a>
-        <a href="image-tools.html">Image Tools</a>
-        <a href="video-tools.html">Video Tools</a>
-        <a href="developer-tools.html">Developer Tools</a>
-        <a href="audio-tools.html">Audio Tools</a>
+        <a href="/system-tools">System Tools</a>
+        <a href="/file-tools">File Tools</a>
+        <a href="/internet-tools">Internet Tools</a>
+        <a href="/image-tools">Image Tools</a>
+        <a href="/video-tools">Video Tools</a>
+        <a href="/developer-tools">Developer Tools</a>
+        <a href="/audio-tools">Audio Tools</a>
       </div>
       <div class="ft-col">
         <h4>Site</h4>
-        <a href="beginners-guide.html">Beginners Guide</a>
-        <a href="submit.html">Submit a Tool</a>
-        <a href="advertise.html">Advertise With Us</a>
-        <a href="privacy-policy.html">Privacy Policy</a>
-        <a href="dmca.html">DMCA</a>
-        <a href="disclaimer.html">Disclaimer</a>
-        <a href="sitemap.html">Sitemap</a>
+        <a href="/beginners-guide">Beginners Guide</a>
+        <a href="/submit">Submit a Tool</a>
+        <a href="/advertise">Advertise With Us</a>
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/dmca">DMCA</a>
+        <a href="/disclaimer">Disclaimer</a>
+        <a href="/sitemap">Sitemap</a>
       </div>
     </div>
     <!-- FOOTER NATIVE AD — replace with Adsterra Native Banner -->
@@ -215,9 +215,9 @@ function renderFooter() {
     <div class="ft-bottom">
       <span class="ft-copy">© 2026 CoreLinks · This site is a directory of links and does not host any files. All trademarks belong to their respective owners.</span>
       <div class="ft-links">
-        <a href="privacy-policy.html">Privacy</a>
-        <a href="dmca.html">DMCA</a>
-        <a href="disclaimer.html">Disclaimer</a>
+        <a href="/privacy-policy">Privacy</a>
+        <a href="/dmca">DMCA</a>
+        <a href="/disclaimer">Disclaimer</a>
       </div>
     </div>
   </footer>
@@ -238,46 +238,46 @@ function renderFooter() {
 
 /* ── SEARCH DB ── */
 const DB = [
-  {n:'Cineby',c:'Movie Streaming',u:'video.html#streaming',e:'📺'},
-  {n:'Fmovies+',c:'Movie Streaming',u:'video.html#streaming',e:'📺'},
-  {n:'Rive',c:'Movie Streaming',u:'video.html#streaming',e:'📺'},
-  {n:'Tubi',c:'Free Legal Streaming',u:'video.html#free-ads',e:'📺'},
-  {n:'HiAnime',c:'Anime Streaming',u:'video.html#anime',e:'🎌'},
-  {n:'AnimeKai',c:'Anime Streaming',u:'video.html#anime',e:'🎌'},
-  {n:'Miruro',c:'Anime Streaming',u:'video.html#anime',e:'🎌'},
-  {n:'animepahe',c:'Anime Streaming',u:'video.html#anime',e:'🎌'},
-  {n:'ChatGPT',c:'AI Chatbot',u:'ai.html#chatbots',e:'🤖'},
-  {n:'Gemini',c:'AI Chatbot',u:'ai.html#chatbots',e:'🤖'},
-  {n:'Claude AI',c:'AI Chatbot',u:'ai.html#chatbots',e:'🤖'},
-  {n:'Perplexity',c:'AI Search',u:'ai.html#ai-search',e:'🔎'},
-  {n:'DeepSeek',c:'AI Chatbot',u:'ai.html#chatbots',e:'🤖'},
-  {n:'Copilot',c:'AI Chatbot',u:'ai.html#chatbots',e:'🤖'},
-  {n:'uBlock Origin',c:'Adblocking',u:'privacy.html#adblock',e:'🛡️'},
-  {n:'Bitwarden',c:'Password Manager',u:'privacy.html#passwords',e:'🔑'},
-  {n:'ProtonVPN',c:'VPN',u:'privacy.html#vpn',e:'🔐'},
-  {n:'Brave Browser',c:'Privacy Browser',u:'privacy.html#browsers',e:'🌐'},
-  {n:'qBittorrent',c:'Torrent Client',u:'torrenting.html#clients',e:'🌊'},
-  {n:'Nyaa',c:'Anime Torrents',u:'torrenting.html#anime',e:'🌊'},
-  {n:'1337x',c:'Torrent Indexer',u:'torrenting.html#indexers',e:'🌊'},
-  {n:'VLC',c:'Media Player',u:'video.html#players',e:'▶️'},
-  {n:'MPV',c:'Media Player',u:'video.html#players',e:'▶️'},
-  {n:'DaVinci Resolve',c:'Video Editor',u:'video-tools.html#editors',e:'🎬'},
-  {n:'OBS Studio',c:'Screen Recorder',u:'video-tools.html#recording',e:'🎬'},
-  {n:'Handbrake',c:'Video Converter',u:'video-tools.html#converters',e:'🎬'},
-  {n:'GIMP',c:'Image Editor',u:'image-tools.html#editors',e:'🖼️'},
-  {n:'Figma',c:'UI Design',u:'image-tools.html#design',e:'🎨'},
-  {n:'Inkscape',c:'Vector Editor',u:'image-tools.html#vector',e:'✏️'},
-  {n:'VS Code',c:'Code Editor',u:'developer-tools.html#editors',e:'💻'},
-  {n:'Audacity',c:'Audio Editor',u:'audio-tools.html#editors',e:'🎧'},
-  {n:'7-Zip',c:'File Archiver',u:'system-tools.html#archivers',e:'📦'},
-  {n:'Calibre',c:'Ebook Manager',u:'reading.html#managers',e:'📚'},
-  {n:'Khan Academy',c:'Free Education',u:'educational.html#courses',e:'🎓'},
-  {n:'Project Gutenberg',c:'Free Ebooks',u:'reading.html#ebooks',e:'📖'},
-  {n:'yt-dlp',c:'Video Downloader',u:'social-media-tools.html#downloaders',e:'⬇️'},
-  {n:'JDownloader',c:'Download Manager',u:'downloading.html#managers',e:'⬇️'},
-  {n:'Mega',c:'Cloud Storage',u:'downloading.html#storage',e:'☁️'},
-  {n:'PCSX2',c:'PS2 Emulator',u:'gaming.html#emulation',e:'🕹️'},
-  {n:'RetroArch',c:'Multi-System Emulator',u:'gaming.html#emulation',e:'🕹️'},
+  {n:'Cineby',c:'Movie Streaming',u:'/video#streaming',e:'📺'},
+  {n:'Fmovies+',c:'Movie Streaming',u:'/video#streaming',e:'📺'},
+  {n:'Rive',c:'Movie Streaming',u:'/video#streaming',e:'📺'},
+  {n:'Tubi',c:'Free Legal Streaming',u:'/video#free-ads',e:'📺'},
+  {n:'HiAnime',c:'Anime Streaming',u:'/video#anime',e:'🎌'},
+  {n:'AnimeKai',c:'Anime Streaming',u:'/video#anime',e:'🎌'},
+  {n:'Miruro',c:'Anime Streaming',u:'/video#anime',e:'🎌'},
+  {n:'animepahe',c:'Anime Streaming',u:'/video#anime',e:'🎌'},
+  {n:'ChatGPT',c:'AI Chatbot',u:'/ai#chatbots',e:'🤖'},
+  {n:'Gemini',c:'AI Chatbot',u:'/ai#chatbots',e:'🤖'},
+  {n:'Claude AI',c:'AI Chatbot',u:'/ai#chatbots',e:'🤖'},
+  {n:'Perplexity',c:'AI Search',u:'/ai#ai-search',e:'🔎'},
+  {n:'DeepSeek',c:'AI Chatbot',u:'/ai#chatbots',e:'🤖'},
+  {n:'Copilot',c:'AI Chatbot',u:'/ai#chatbots',e:'🤖'},
+  {n:'uBlock Origin',c:'Adblocking',u:'/privacy#adblock',e:'🛡️'},
+  {n:'Bitwarden',c:'Password Manager',u:'/privacy#passwords',e:'🔑'},
+  {n:'ProtonVPN',c:'VPN',u:'/privacy#vpn',e:'🔐'},
+  {n:'Brave Browser',c:'Privacy Browser',u:'/privacy#browsers',e:'🌐'},
+  {n:'qBittorrent',c:'Torrent Client',u:'/torrenting#clients',e:'🌊'},
+  {n:'Nyaa',c:'Anime Torrents',u:'/torrenting#anime',e:'🌊'},
+  {n:'1337x',c:'Torrent Indexer',u:'/torrenting#indexers',e:'🌊'},
+  {n:'VLC',c:'Media Player',u:'/video#players',e:'▶️'},
+  {n:'MPV',c:'Media Player',u:'/video#players',e:'▶️'},
+  {n:'DaVinci Resolve',c:'Video Editor',u:'/video-tools#editors',e:'🎬'},
+  {n:'OBS Studio',c:'Screen Recorder',u:'/video-tools#recording',e:'🎬'},
+  {n:'Handbrake',c:'Video Converter',u:'/video-tools#converters',e:'🎬'},
+  {n:'GIMP',c:'Image Editor',u:'/image-tools#editors',e:'🖼️'},
+  {n:'Figma',c:'UI Design',u:'/image-tools#design',e:'🎨'},
+  {n:'Inkscape',c:'Vector Editor',u:'/image-tools#vector',e:'✏️'},
+  {n:'VS Code',c:'Code Editor',u:'/developer-tools#editors',e:'💻'},
+  {n:'Audacity',c:'Audio Editor',u:'/audio-tools#editors',e:'🎧'},
+  {n:'7-Zip',c:'File Archiver',u:'/system-tools#archivers',e:'📦'},
+  {n:'Calibre',c:'Ebook Manager',u:'/reading#managers',e:'📚'},
+  {n:'Khan Academy',c:'Free Education',u:'/educational#courses',e:'🎓'},
+  {n:'Project Gutenberg',c:'Free Ebooks',u:'/reading#ebooks',e:'📖'},
+  {n:'yt-dlp',c:'Video Downloader',u:'/social-media-tools#downloaders',e:'⬇️'},
+  {n:'JDownloader',c:'Download Manager',u:'/downloading#managers',e:'⬇️'},
+  {n:'Mega',c:'Cloud Storage',u:'/downloading#storage',e:'☁️'},
+  {n:'PCSX2',c:'PS2 Emulator',u:'/gaming#emulation',e:'🕹️'},
+  {n:'RetroArch',c:'Multi-System Emulator',u:'/gaming#emulation',e:'🕹️'},
 ];
 
 function initSearch(inputId, resultsId) {
@@ -299,7 +299,7 @@ function initSearch(inputId, resultsId) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  const p = location.pathname.split('/').pop() || 'index.html';
+  const p = location.pathname.split('/').pop() || '/';
   document.querySelectorAll('.lnav a,.tb-nav a').forEach(a => {
     if (a.getAttribute('href') === p) a.classList.add('active');
   });
