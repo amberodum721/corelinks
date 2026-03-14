@@ -31,7 +31,7 @@
         <div class="pg-badge">⭐ = <b>Recommended</b></div>
       </div>
     </div>
-    <div class="ad-inline"><div class="ad-box ad-728">Ads</div></div>
+    <div class="ad-inline"><div id="ad-inline-0" style="display:flex;justify-content:center;width:100%;min-height:90px"></div></div>
 
     <div class="tool-section" id="editors">
       <div class="sec-hdr"><h2>Image Editors</h2><span class="sec-anchor">#editors</span></div>
@@ -87,8 +87,8 @@
       </div>
       </div>
     </div>
-    <div class="ad-inline"><div class="ad-box ad-468">Ads</div></div>
-    <div class="ad-inline"><div class="ad-box ad-728">Ads</div></div>
+    <div class="ad-inline"><div id="ad-inline-1" style="display:flex;justify-content:center;width:100%;min-height:60px"></div></div>
+    <div class="ad-inline"><div id="ad-inline-2" style="display:flex;justify-content:center;width:100%;min-height:90px"></div></div>
     <div class="tool-section" id="design">
       <div class="sec-hdr"><h2>Vector & UI Design</h2><span class="sec-anchor">#design</span></div>
       
@@ -127,7 +127,7 @@
       </div>
       </div>
     </div>
-    <div class="ad-inline"><div class="ad-box ad-728">Ads</div></div>
+    <div class="ad-inline"><div id="ad-inline-3" style="display:flex;justify-content:center;width:100%;min-height:90px"></div></div>
     <div class="tool-section" id="ai-images">
       <div class="sec-hdr"><h2>AI Image Tools</h2><span class="sec-anchor">#ai-images</span></div>
       
@@ -158,7 +158,7 @@
       </div>
       </div>
     </div>
-    <div class="ad-inline"><div class="ad-box ad-728">Ads</div></div>
+    <div class="ad-inline"><div id="ad-inline-4" style="display:flex;justify-content:center;width:100%;min-height:90px"></div></div>
     <div class="tool-section" id="converters">
       <div class="sec-hdr"><h2>Image Converters & Optimizers</h2><span class="sec-anchor">#converters</span></div>
       
@@ -197,14 +197,28 @@
       </div>
       </div>
     </div>
-    <div class="ad-inline"><div class="ad-box ad-728">Ads</div></div>
-    <div class="ad-inline"><div class="ad-box ad-native">Ads</div></div>
+    <div class="ad-inline"><div id="ad-inline-5" style="display:flex;justify-content:center;width:100%;min-height:90px"></div></div>
+    <div class="ad-inline"><div id="ad-inline-6" style="display:flex;justify-content:center;width:100%;min-height:60px"></div></div>
   </main>
   <div class="rcol" id="rcol"></div>
 </div>
 <div id="footer-ad"></div>
 <div id="footer"></div>
 <script src="../js/layout.js"></script>
-<script>renderTopAd();renderTopbar();renderLeftNav();renderRightCol([{"id": "editors", "label": "Image Editors"}, {"id": "design", "label": "Vector & UI Design"}, {"id": "ai-images", "label": "AI Image Tools"}, {"id": "converters", "label": "Converters"}]);renderFooter();</script>
+<script>renderTopAd();renderTopbar();renderLeftNav();renderRightCol([{"id": "editors", "label": "Image Editors"}, {"id": "design", "label": "Vector & UI Design"}, {"id": "ai-images", "label": "AI Image Tools"}, {"id": "converters", "label": "Converters"}]);renderFooter();setTimeout(loadAllAds,200);</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  setTimeout(function() {
+  loadBanner('ad-inline-0', 'b7541b7455aed29f707d4eecdbdeb799', 728, 90);
+  loadBanner('ad-inline-1', '80fa29ee14ab0eb876045874cbfcc7a0', 468, 60);
+  loadBanner('ad-inline-2', 'b7541b7455aed29f707d4eecdbdeb799', 728, 90);
+  loadBanner('ad-inline-3', 'b7541b7455aed29f707d4eecdbdeb799', 728, 90);
+  loadBanner('ad-inline-4', '80fa29ee14ab0eb876045874cbfcc7a0', 468, 60);
+  loadBanner('ad-inline-5', 'b7541b7455aed29f707d4eecdbdeb799', 728, 90);
+  loadBanner('ad-inline-6', 'b7541b7455aed29f707d4eecdbdeb799', 728, 90);
+  }, 150);
+});
+</script>
 </body>
 </html>

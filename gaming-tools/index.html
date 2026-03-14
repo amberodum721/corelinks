@@ -31,7 +31,7 @@
         <div class="pg-badge">⭐ = <b>Recommended</b></div>
       </div>
     </div>
-    <div class="ad-inline"><div class="ad-box ad-728">Ads</div></div>
+    <div class="ad-inline"><div id="ad-inline-0" style="display:flex;justify-content:center;width:100%;min-height:90px"></div></div>
 
     <div class="tool-section" id="modding">
       <div class="sec-hdr"><h2>Modding Tools</h2><span class="sec-anchor">#modding</span></div>
@@ -71,8 +71,8 @@
       </div>
       </div>
     </div>
-    <div class="ad-inline"><div class="ad-box ad-468">Ads</div></div>
-    <div class="ad-inline"><div class="ad-box ad-728">Ads</div></div>
+    <div class="ad-inline"><div id="ad-inline-1" style="display:flex;justify-content:center;width:100%;min-height:60px"></div></div>
+    <div class="ad-inline"><div id="ad-inline-2" style="display:flex;justify-content:center;width:100%;min-height:90px"></div></div>
     <div class="tool-section" id="overlays">
       <div class="sec-hdr"><h2>Overlays & Monitoring</h2><span class="sec-anchor">#overlays</span></div>
       
@@ -103,7 +103,7 @@
       </div>
       </div>
     </div>
-    <div class="ad-inline"><div class="ad-box ad-728">Ads</div></div>
+    <div class="ad-inline"><div id="ad-inline-3" style="display:flex;justify-content:center;width:100%;min-height:90px"></div></div>
     <div class="tool-section" id="trainers">
       <div class="sec-hdr"><h2>Trainers & Cheats</h2><span class="sec-anchor">#trainers</span></div>
       <div class="sec-note">Single-player use only. Never use cheats or trainers in online or multiplayer games.</div>
@@ -134,14 +134,27 @@
       </div>
       </div>
     </div>
-    <div class="ad-inline"><div class="ad-box ad-728">Ads</div></div>
-    <div class="ad-inline"><div class="ad-box ad-native">Ads</div></div>
+    <div class="ad-inline"><div id="ad-inline-4" style="display:flex;justify-content:center;width:100%;min-height:90px"></div></div>
+    <div class="ad-inline"><div id="ad-inline-5" style="display:flex;justify-content:center;width:100%;min-height:60px"></div></div>
   </main>
   <div class="rcol" id="rcol"></div>
 </div>
 <div id="footer-ad"></div>
 <div id="footer"></div>
 <script src="../js/layout.js"></script>
-<script>renderTopAd();renderTopbar();renderLeftNav();renderRightCol([{"id": "modding", "label": "Modding Tools"}, {"id": "overlays", "label": "Overlays"}, {"id": "trainers", "label": "Trainers"}]);renderFooter();</script>
+<script>renderTopAd();renderTopbar();renderLeftNav();renderRightCol([{"id": "modding", "label": "Modding Tools"}, {"id": "overlays", "label": "Overlays"}, {"id": "trainers", "label": "Trainers"}]);renderFooter();setTimeout(loadAllAds,200);</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  setTimeout(function() {
+  loadBanner('ad-inline-0', 'b7541b7455aed29f707d4eecdbdeb799', 728, 90);
+  loadBanner('ad-inline-1', '80fa29ee14ab0eb876045874cbfcc7a0', 468, 60);
+  loadBanner('ad-inline-2', 'b7541b7455aed29f707d4eecdbdeb799', 728, 90);
+  loadBanner('ad-inline-3', 'b7541b7455aed29f707d4eecdbdeb799', 728, 90);
+  loadBanner('ad-inline-4', '80fa29ee14ab0eb876045874cbfcc7a0', 468, 60);
+  loadBanner('ad-inline-5', 'b7541b7455aed29f707d4eecdbdeb799', 728, 90);
+  }, 150);
+});
+</script>
 </body>
 </html>

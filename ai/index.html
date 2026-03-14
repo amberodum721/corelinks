@@ -31,7 +31,7 @@
         <div class="pg-badge">⭐ = <b>Recommended</b></div>
       </div>
     </div>
-    <div class="ad-inline"><div class="ad-box ad-728">Ads</div></div>
+    <div class="ad-inline"><div id="ad-inline-0" style="display:flex;justify-content:center;width:100%;min-height:90px"></div></div>
 
     <div class="tool-section" id="chatbots">
       <div class="sec-hdr"><h2>AI Chatbots</h2><span class="sec-anchor">#chatbots</span></div>
@@ -143,8 +143,8 @@
       </div>
       </div>
     </div>
-    <div class="ad-inline"><div class="ad-box ad-468">Ads</div></div>
-    <div class="ad-inline"><div class="ad-box ad-728">Ads</div></div>
+    <div class="ad-inline"><div id="ad-inline-1" style="display:flex;justify-content:center;width:100%;min-height:60px"></div></div>
+    <div class="ad-inline"><div id="ad-inline-2" style="display:flex;justify-content:center;width:100%;min-height:90px"></div></div>
     <div class="tool-section" id="image-gen">
       <div class="sec-hdr"><h2>AI Image Generators</h2><span class="sec-anchor">#image-gen</span></div>
       
@@ -215,8 +215,8 @@
       </div>
       </div>
     </div>
-    <div class="ad-inline"><div class="ad-box ad-468">Ads</div></div>
-    <div class="ad-inline"><div class="ad-box ad-728">Ads</div></div>
+    <div class="ad-inline"><div id="ad-inline-3" style="display:flex;justify-content:center;width:100%;min-height:60px"></div></div>
+    <div class="ad-inline"><div id="ad-inline-4" style="display:flex;justify-content:center;width:100%;min-height:90px"></div></div>
     <div class="tool-section" id="ai-writing">
       <div class="sec-hdr"><h2>AI Writing Tools</h2><span class="sec-anchor">#ai-writing</span></div>
       
@@ -263,7 +263,7 @@
       </div>
       </div>
     </div>
-    <div class="ad-inline"><div class="ad-box ad-728">Ads</div></div>
+    <div class="ad-inline"><div id="ad-inline-5" style="display:flex;justify-content:center;width:100%;min-height:90px"></div></div>
     <div class="tool-section" id="ai-code">
       <div class="sec-hdr"><h2>AI Coding Tools</h2><span class="sec-anchor">#ai-code</span></div>
       
@@ -302,7 +302,7 @@
       </div>
       </div>
     </div>
-    <div class="ad-inline"><div class="ad-box ad-728">Ads</div></div>
+    <div class="ad-inline"><div id="ad-inline-6" style="display:flex;justify-content:center;width:100%;min-height:90px"></div></div>
     <div class="tool-section" id="ai-search">
       <div class="sec-hdr"><h2>AI Search Engines</h2><span class="sec-anchor">#ai-search</span></div>
       
@@ -333,14 +333,30 @@
       </div>
       </div>
     </div>
-    <div class="ad-inline"><div class="ad-box ad-728">Ads</div></div>
-    <div class="ad-inline"><div class="ad-box ad-native">Ads</div></div>
+    <div class="ad-inline"><div id="ad-inline-7" style="display:flex;justify-content:center;width:100%;min-height:90px"></div></div>
+    <div class="ad-inline"><div id="ad-inline-8" style="display:flex;justify-content:center;width:100%;min-height:60px"></div></div>
   </main>
   <div class="rcol" id="rcol"></div>
 </div>
 <div id="footer-ad"></div>
 <div id="footer"></div>
 <script src="../js/layout.js"></script>
-<script>renderTopAd();renderTopbar();renderLeftNav();renderRightCol([{"id": "chatbots", "label": "AI Chatbots"}, {"id": "image-gen", "label": "Image Generators"}, {"id": "ai-writing", "label": "Writing Tools"}, {"id": "ai-code", "label": "Coding AI"}, {"id": "ai-search", "label": "AI Search"}]);renderFooter();</script>
+<script>renderTopAd();renderTopbar();renderLeftNav();renderRightCol([{"id": "chatbots", "label": "AI Chatbots"}, {"id": "image-gen", "label": "Image Generators"}, {"id": "ai-writing", "label": "Writing Tools"}, {"id": "ai-code", "label": "Coding AI"}, {"id": "ai-search", "label": "AI Search"}]);renderFooter();setTimeout(loadAllAds,200);</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  setTimeout(function() {
+  loadBanner('ad-inline-0', 'b7541b7455aed29f707d4eecdbdeb799', 728, 90);
+  loadBanner('ad-inline-1', '80fa29ee14ab0eb876045874cbfcc7a0', 468, 60);
+  loadBanner('ad-inline-2', 'b7541b7455aed29f707d4eecdbdeb799', 728, 90);
+  loadBanner('ad-inline-3', 'b7541b7455aed29f707d4eecdbdeb799', 728, 90);
+  loadBanner('ad-inline-4', '80fa29ee14ab0eb876045874cbfcc7a0', 468, 60);
+  loadBanner('ad-inline-5', 'b7541b7455aed29f707d4eecdbdeb799', 728, 90);
+  loadBanner('ad-inline-6', 'b7541b7455aed29f707d4eecdbdeb799', 728, 90);
+  loadBanner('ad-inline-7', '80fa29ee14ab0eb876045874cbfcc7a0', 468, 60);
+  loadBanner('ad-inline-8', 'b7541b7455aed29f707d4eecdbdeb799', 728, 90);
+  }, 150);
+});
+</script>
 </body>
 </html>

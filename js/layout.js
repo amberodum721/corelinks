@@ -271,9 +271,9 @@ function renderMobileUI() {
     if (i === 1 && !sec.querySelector('.mob-ad-card')) {
       const ad = document.createElement('div');
       ad.className = 'mob-ad-card';
-      ad.innerHTML = `<div class="ad-label">Advertisement</div>
-        <div class="ad-placeholder" style="width:100%;min-height:100px;background:var(--bg);border:1px dashed var(--border2);border-radius:7px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:.7rem;font-family:var(--fm)">Ads</div>`;
+      ad.innerHTML = '<div class="ad-label">Advertisement</div><div id="ad-mob-inline"></div>';
       sec.after(ad);
+      setTimeout(()=>loadBanner('ad-mob-inline','1dccbfbf79cd21cec3a96adc766f47f4',300,250), 300);
     }
   });
 }

@@ -38,7 +38,7 @@
 
 <!-- AD ZONE 2: Below Hero -->
 <div style="display:flex;justify-content:center;padding:10px 0;background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
-  <div class="ad-box ad-728">Ads</div>
+  <div id="ad-inline-2" style="display:flex;justify-content:center;width:100%;min-height:90px"></div>
 </div>
 
 <div class="home-layout">
@@ -72,7 +72,7 @@
     </div>
 
     <!-- AD ZONE 3 -->
-    <div class="ad-inline"><div class="ad-box ad-728">Ads</div></div>
+    <div class="ad-inline"><div id="ad-inline-0" style="display:flex;justify-content:center;width:100%;min-height:90px"></div></div>
 
     <div class="slabel">Tool Categories</div>
     <div class="cat-grid">
@@ -89,7 +89,7 @@
     </div>
 
     <!-- AD ZONE 4: Native -->
-    <div class="ad-inline"><div class="ad-box ad-native">Ads</div></div>
+    <div class="ad-inline"><div id="ad-inline-1" style="display:flex;justify-content:center;width:100%;min-height:60px"></div></div>
 
     <!-- SUBMIT CTA -->
     <div style="background:linear-gradient(135deg,#0c0d18,#111220);border:1px solid var(--border);border-radius:14px;padding:32px;text-align:center">
@@ -107,6 +107,16 @@
 <div id="footer"></div>
 
 <script src="js/layout.js"></script>
-<script>renderTopAd();renderTopbar();renderLeftNav();renderRightCol();renderFooter();</script>
+<script>renderTopAd();renderTopbar();renderLeftNav();renderRightCol();renderFooter();setTimeout(loadAllAds,200);</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  setTimeout(function() {
+  loadBanner('ad-inline-2', 'b7541b7455aed29f707d4eecdbdeb799', 728, 90);
+  loadBanner('ad-inline-0', '80fa29ee14ab0eb876045874cbfcc7a0', 468, 60);
+  loadBanner('ad-inline-1', 'b7541b7455aed29f707d4eecdbdeb799', 728, 90);
+  }, 150);
+});
+</script>
 </body>
 </html>

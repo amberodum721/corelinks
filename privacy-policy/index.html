@@ -18,7 +18,7 @@
 <div style="max-width:740px;margin:0 auto;padding:60px 1.5rem 80px">
 <h1 style="font-size:2rem;font-weight:800;margin-bottom:8px">Privacy Policy</h1>
 <p style="font-family:var(--fm);font-size:.7rem;color:var(--muted);margin-bottom:32px">Last updated: January 2026</p>
-<div class="ad-inline"><div class="ad-box ad-728" style="max-width:100%">Ads</div></div>
+<div class="ad-inline"><div id="ad-inline-0" style="display:flex;justify-content:center;width:100%;min-height:90px"></div></div>
 
 <p style="color:var(--muted2);line-height:1.75;font-size:.88rem;margin-bottom:14px">CoreLinks ("we", "us", "our") operates this website. This page informs you of our policies regarding the collection, use and disclosure of personal data.</p>
 
@@ -47,5 +47,13 @@
 </div>
 <div id="footer-ad"></div><div id="footer"></div>
 <script src="../js/layout.js"></script>
-<script>renderTopAd();renderTopbar();renderFooter();</script>
+<script>renderTopAd();renderTopbar();renderFooter();setTimeout(loadAllAds,200);</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  setTimeout(function() {
+  loadBanner('ad-inline-0', 'b7541b7455aed29f707d4eecdbdeb799', 728, 90);
+  }, 150);
+});
+</script>
 </body></html>
