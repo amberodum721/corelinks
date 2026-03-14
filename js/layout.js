@@ -25,26 +25,14 @@
 /* Replace each template string with your Adsterra code  */
 
 const AD = {
-  /* ZONE 1 — Top Leaderboard 728×90 */
-  top: `<div class="ad-placeholder" style="width:728px;max-width:100%;height:90px;background:var(--bg3);border:1px dashed var(--border2);border-radius:7px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:.7rem;font-family:var(--fm)">Ads</div>`,
-
-  /* ZONE 2 — Mid-Content 728×90 */
-  mid: `<div class="ad-placeholder" style="width:728px;max-width:100%;height:90px;background:var(--bg3);border:1px dashed var(--border2);border-radius:7px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:.7rem;font-family:var(--fm)">Ads</div>`,
-
-  /* ZONE 3 — Half Banner 468×60 */
-  half: `<div class="ad-placeholder" style="width:468px;max-width:100%;height:60px;background:var(--bg3);border:1px dashed var(--border2);border-radius:7px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:.7rem;font-family:var(--fm)">Ads</div>`,
-
-  /* ZONE 4 — Rectangle 300×250 */
-  box: `<div class="ad-placeholder" style="width:300px;height:250px;background:var(--bg3);border:1px dashed var(--border2);border-radius:7px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:.7rem;font-family:var(--fm);flex-shrink:0">Ads</div>`,
-
-  /* ZONE 5 — Skyscraper 160×600 */
-  sky: `<div class="ad-placeholder" style="width:160px;min-height:600px;background:var(--bg3);border:1px dashed var(--border2);border-radius:7px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:.7rem;font-family:var(--fm);writing-mode:horizontal-tb">Ads</div>`,
-
-  /* ZONE 6 — Native Ad (full width) */
-  native: `<div class="ad-placeholder" style="width:100%;max-width:720px;min-height:100px;background:var(--bg3);border:1px dashed var(--border2);border-radius:7px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:.7rem;font-family:var(--fm)">Ads</div>`,
-
-  /* ZONE 7 — Mobile Banner 320×50 (shows only on mobile) */
-  mobile: `<div class="ad-placeholder" style="width:320px;max-width:100%;height:50px;background:var(--bg3);border:1px dashed var(--border2);border-radius:7px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:.7rem;font-family:var(--fm)">Ads</div>`,
+  top:    `<div style="display:flex;justify-content:center;align-items:center;width:728px;max-width:100%;overflow:hidden"><script>atOptions={'key':'b7541b7455aed29f707d4eecdbdeb799','format':'iframe','height':90,'width':728,'params':{}};</script><script src="https://www.highperformanceformat.com/b7541b7455aed29f707d4eecdbdeb799/invoke.js"></script></div>`,
+  mid:    `<div style="display:flex;justify-content:center;align-items:center;width:728px;max-width:100%;overflow:hidden"><script>atOptions={'key':'b7541b7455aed29f707d4eecdbdeb799','format':'iframe','height':90,'width':728,'params':{}};</script><script src="https://www.highperformanceformat.com/b7541b7455aed29f707d4eecdbdeb799/invoke.js"></script></div>`,
+  half:   `<div style="display:flex;justify-content:center;align-items:center;width:468px;max-width:100%;overflow:hidden"><script>atOptions={'key':'80fa29ee14ab0eb876045874cbfcc7a0','format':'iframe','height':60,'width':468,'params':{}};</script><script src="https://www.highperformanceformat.com/80fa29ee14ab0eb876045874cbfcc7a0/invoke.js"></script></div>`,
+  box:    `<div style="display:flex;justify-content:center;align-items:center;width:300px;max-width:100%;overflow:hidden;flex-shrink:0"><script>atOptions={'key':'1dccbfbf79cd21cec3a96adc766f47f4','format':'iframe','height':250,'width':300,'params':{}};</script><script src="https://www.highperformanceformat.com/1dccbfbf79cd21cec3a96adc766f47f4/invoke.js"></script></div>`,
+  sky:    `<div style="display:flex;justify-content:center;align-items:center;width:160px;max-width:100%;overflow:hidden;flex-shrink:0"><script>atOptions={'key':'fe24f4a5fe3326fcf51f14992e0c86ad','format':'iframe','height':600,'width':160,'params':{}};</script><script src="https://www.highperformanceformat.com/fe24f4a5fe3326fcf51f14992e0c86ad/invoke.js"></script></div>`,
+  native: `<script async="async" data-cfasync="false" src="https://pl28917709.effectivegatecpm.com/3990d9e21b58a40bffc13804806817f6/invoke.js"></script><div id="container-3990d9e21b58a40bffc13804806817f6"></div>`,
+  mobile: `<div style="display:flex;justify-content:center;align-items:center;width:320px;max-width:100%;overflow:hidden"><script>atOptions={'key':'9e6ebfa3f905f2661d487c0577beca79','format':'iframe','height':50,'width':320,'params':{}};</script><script src="https://www.highperformanceformat.com/9e6ebfa3f905f2661d487c0577beca79/invoke.js"></script></div>`,
+  box2:   `<div style="display:flex;justify-content:center;align-items:center;width:160px;max-width:100%;overflow:hidden;flex-shrink:0"><script>atOptions={'key':'5af135e17ad7faaaeb36e23014b1d68a','format':'iframe','height':300,'width':160,'params':{}};</script><script src="https://www.highperformanceformat.com/5af135e17ad7faaaeb36e23014b1d68a/invoke.js"></script></div>`,
 };
 
 /*
@@ -154,8 +142,8 @@ function renderRightCol(toc = []) {
       <a href="/torrenting#clients" class="rcol-link"><span class="rcol-dot"></span>qBittorrent</a>
       <a href="/developer-tools#editors" class="rcol-link"><span class="rcol-dot"></span>VS Code</a>
     </div>
-    <!-- RIGHT SIDEBAR AD 2 — 300x250 -->
-    ${AD.box}
+    <!-- RIGHT SIDEBAR AD 2 — 160x300 -->
+    ${AD.box2}
     <div class="rcol-card">
       <div class="rcol-title">📚 Start Here</div>
       <a href="/beginners-guide" class="rcol-link"><span class="rcol-dot"></span>Beginners Guide</a>
@@ -192,6 +180,22 @@ function renderMobileUI() {
     // Render left nav inside drawer too
     const tmp = document.getElementById('lnav');
     document.getElementById('mob-lnav').innerHTML = tmp ? tmp.innerHTML : '';
+  }
+
+  // Inject Popunder (once per page)
+  if (!document.getElementById('adsterra-popunder')) {
+    const s = document.createElement('script');
+    s.id  = 'adsterra-popunder';
+    s.src = 'https://pl28916747.effectivegatecpm.com/72/4e/0b/724e0bdb2ab80c733aa27f402aca9ab1.js';
+    document.head.appendChild(s);
+  }
+
+  // Inject Social Bar (above </body>)
+  if (!document.getElementById('adsterra-socialbar')) {
+    const s = document.createElement('script');
+    s.id  = 'adsterra-socialbar';
+    s.src = 'https://pl28917703.effectivegatecpm.com/51/73/86/51738656e6dc85212cb85d85b8d52262.js';
+    document.body.appendChild(s);
   }
 
   // Active state for bottom nav
