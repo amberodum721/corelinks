@@ -24,28 +24,78 @@
 /* ── AD PLACEHOLDERS ─────────────────────────────────── */
 /* Replace each template string with your Adsterra code  */
 
+/* ── AD LOADER ───────────────────────────────────────────
+   Banners use atOptions — must be injected as real <script>
+   elements, not innerHTML strings (browser blocks those).
+──────────────────────────────────────────────────────── */
+function loadBanner(containerId, key, width, height) {
+  const wrap = document.getElementById(containerId);
+  if (!wrap) return;
+  // Set fixed dimensions on wrapper
+  wrap.style.cssText = `display:flex;justify-content:center;align-items:center;width:100%;min-height:${height}px;overflow:hidden`;
+  // atOptions script
+  const s1 = document.createElement('script');
+  s1.type = 'text/javascript';
+  s1.textContent = `atOptions={'key':'${key}','format':'iframe','height':${height},'width':${width},'params':{}};`;
+  wrap.appendChild(s1);
+  // invoke script
+  const s2 = document.createElement('script');
+  s2.type = 'text/javascript';
+  s2.src  = `https://www.highperformanceformat.com/${key}/invoke.js`;
+  wrap.appendChild(s2);
+}
+
+function loadNative(containerId) {
+  const wrap = document.getElementById(containerId);
+  if (!wrap) return;
+  const div = document.createElement('div');
+  div.id = containerId + '-inner';
+  wrap.appendChild(div);
+  const s = document.createElement('script');
+  s.async = true;
+  s.setAttribute('data-cfasync', 'false');
+  s.src = 'https://pl28917709.effectivegatecpm.com/3990d9e21b58a40bffc13804806817f6/invoke.js';
+  wrap.appendChild(s);
+  // Adsterra native targets the container id
+  const d = document.createElement('div');
+  d.id = 'container-3990d9e21b58a40bffc13804806817f6';
+  wrap.appendChild(d);
+}
+
+/* ── AD PLACEHOLDER HTML ─────────────────────────────
+   Just empty divs with IDs — loadBanner() fills them
+──────────────────────────────────────────────────────── */
 const AD = {
-  /* ZONE 1 — Top Leaderboard 728×90 */
-  top: `<div class="ad-placeholder" style="width:728px;max-width:100%;height:90px;background:var(--bg3);border:1px dashed var(--border2);border-radius:7px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:.7rem;font-family:var(--fm)">Ads</div>`,
-
-  /* ZONE 2 — Mid-Content 728×90 */
-  mid: `<div class="ad-placeholder" style="width:728px;max-width:100%;height:90px;background:var(--bg3);border:1px dashed var(--border2);border-radius:7px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:.7rem;font-family:var(--fm)">Ads</div>`,
-
-  /* ZONE 3 — Half Banner 468×60 */
-  half: `<div class="ad-placeholder" style="width:468px;max-width:100%;height:60px;background:var(--bg3);border:1px dashed var(--border2);border-radius:7px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:.7rem;font-family:var(--fm)">Ads</div>`,
-
-  /* ZONE 4 — Rectangle 300×250 */
-  box: `<div class="ad-placeholder" style="width:300px;height:250px;background:var(--bg3);border:1px dashed var(--border2);border-radius:7px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:.7rem;font-family:var(--fm);flex-shrink:0">Ads</div>`,
-
-  /* ZONE 5 — Skyscraper 160×600 */
-  sky: `<div class="ad-placeholder" style="width:160px;min-height:600px;background:var(--bg3);border:1px dashed var(--border2);border-radius:7px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:.7rem;font-family:var(--fm);writing-mode:horizontal-tb">Ads</div>`,
-
-  /* ZONE 6 — Native Ad (full width) */
-  native: `<div class="ad-placeholder" style="width:100%;max-width:720px;min-height:100px;background:var(--bg3);border:1px dashed var(--border2);border-radius:7px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:.7rem;font-family:var(--fm)">Ads</div>`,
-
-  /* ZONE 7 — Mobile Banner 320×50 (shows only on mobile) */
-  mobile: `<div class="ad-placeholder" style="width:320px;max-width:100%;height:50px;background:var(--bg3);border:1px dashed var(--border2);border-radius:7px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:.7rem;font-family:var(--fm)">Ads</div>`,
+  top:    `<div id="ad-top" style="display:flex;justify-content:center;width:100%;min-height:90px"></div>`,
+  mid:    `<div id="ad-mid" style="display:flex;justify-content:center;width:100%;min-height:90px"></div>`,
+  half:   `<div id="ad-half" style="display:flex;justify-content:center;width:100%;min-height:60px"></div>`,
+  box:    `<div id="ad-box" style="min-height:250px;min-width:300px;flex-shrink:0"></div>`,
+  box2:   `<div id="ad-box2" style="min-height:300px;min-width:160px;flex-shrink:0"></div>`,
+  sky:    `<div id="ad-sky" style="min-height:600px;min-width:160px;flex-shrink:0"></div>`,
+  native: `<div id="ad-native" style="width:100%;min-height:100px"></div>`,
+  mobile: `<div id="ad-mobile" style="display:flex;justify-content:center;width:100%;min-height:50px"></div>`,
 };
+
+/* Called after all layout is rendered */
+function loadAllAds() {
+  loadBanner('ad-top',    'b7541b7455aed29f707d4eecdbdeb799', 728, 90);
+  loadBanner('ad-mid',    'b7541b7455aed29f707d4eecdbdeb799', 728, 90);
+  loadBanner('ad-half',   '80fa29ee14ab0eb876045874cbfcc7a0', 468, 60);
+  loadBanner('ad-box',    '1dccbfbf79cd21cec3a96adc766f47f4', 300, 250);
+  loadBanner('ad-box2',   '5af135e17ad7faaaeb36e23014b1d68a', 160, 300);
+  loadBanner('ad-sky',    'fe24f4a5fe3326fcf51f14992e0c86ad', 160, 600);
+  loadBanner('ad-mobile', '9e6ebfa3f905f2661d487c0577beca79', 320, 50);
+  loadNative('ad-native');
+  // Right sidebar has 3 box slots — load each separately
+  document.querySelectorAll('[id^="ad-box-"]').forEach((el, i) => {
+    const keys = [
+      '1dccbfbf79cd21cec3a96adc766f47f4',
+      '5af135e17ad7faaaeb36e23014b1d68a',
+      '1dccbfbf79cd21cec3a96adc766f47f4',
+    ];
+    loadBanner(el.id, keys[i] || keys[0], 300, 250);
+  });
+}
 
 /*
  ┌──────────────────────────────────────────────────────────┐
@@ -144,7 +194,7 @@ function renderRightCol(toc = []) {
   document.getElementById('rcol').innerHTML = `
     ${tocHtml}
     <!-- RIGHT SIDEBAR AD 1 — 300x250 -->
-    ${AD.box}
+    <div id="ad-box-0" style="min-height:250px;min-width:300px;flex-shrink:0"></div>
     <div class="rcol-card">
       <div class="rcol-title">🔥 Trending</div>
       <a href="/video#streaming" class="rcol-link"><span class="rcol-dot"></span>Cineby</a>
@@ -154,8 +204,8 @@ function renderRightCol(toc = []) {
       <a href="/torrenting#clients" class="rcol-link"><span class="rcol-dot"></span>qBittorrent</a>
       <a href="/developer-tools#editors" class="rcol-link"><span class="rcol-dot"></span>VS Code</a>
     </div>
-    <!-- RIGHT SIDEBAR AD 2 — 300x250 -->
-    ${AD.box}
+    <!-- RIGHT SIDEBAR AD 2 — 160x300 -->
+    <div id="ad-box-1" style="min-height:300px;min-width:160px;flex-shrink:0"></div>
     <div class="rcol-card">
       <div class="rcol-title">📚 Start Here</div>
       <a href="/beginners-guide" class="rcol-link"><span class="rcol-dot"></span>Beginners Guide</a>
@@ -163,7 +213,7 @@ function renderRightCol(toc = []) {
       <a href="/unsafe" class="rcol-link"><span class="rcol-dot"></span>Sites to Avoid</a>
     </div>
     <!-- RIGHT SIDEBAR AD 3 — sticky 300x250 -->
-    <div style="position:sticky;top:80px">${AD.box}</div>`;
+    <div style="position:sticky;top:80px"><div id="ad-box-2" style="min-height:250px;min-width:300px;flex-shrink:0"></div></div>`;
 }
 
 /* ── FOOTER ── */
@@ -192,6 +242,22 @@ function renderMobileUI() {
     // Render left nav inside drawer too
     const tmp = document.getElementById('lnav');
     document.getElementById('mob-lnav').innerHTML = tmp ? tmp.innerHTML : '';
+  }
+
+  // Inject Popunder (once per page)
+  if (!document.getElementById('adsterra-popunder')) {
+    const s = document.createElement('script');
+    s.id  = 'adsterra-popunder';
+    s.src = 'https://pl28916747.effectivegatecpm.com/72/4e/0b/724e0bdb2ab80c733aa27f402aca9ab1.js';
+    document.head.appendChild(s);
+  }
+
+  // Inject Social Bar (above </body>)
+  if (!document.getElementById('adsterra-socialbar')) {
+    const s = document.createElement('script');
+    s.id  = 'adsterra-socialbar';
+    s.src = 'https://pl28917703.effectivegatecpm.com/51/73/86/51738656e6dc85212cb85d85b8d52262.js';
+    document.body.appendChild(s);
   }
 
   // Active state for bottom nav
@@ -371,6 +437,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initSearch('hs','sr');
   initSearch('ts','sr2');
   renderMobileUI();
+  // Load all banner ads AFTER layout is in the DOM
+  setTimeout(loadAllAds, 100);
 });
 
 /* ── VISITOR TRACKER ──────────────────────────────────── */
