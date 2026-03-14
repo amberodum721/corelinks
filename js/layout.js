@@ -78,6 +78,7 @@ function renderTopbar() {
         <a href="/developer-tools">Dev</a>
         <a href="/beginners-guide" style="color:var(--accent2)">📖 Start Here</a>
       </nav>
+      <div class="mob-menu-btn" onclick="toggleMobMenu()" id="mob-btn">☰</div>
     </div>
   </header>`;
 }
@@ -166,6 +167,60 @@ function renderRightCol(toc = []) {
 }
 
 /* ── FOOTER ── */
+function renderMobileUI() {
+  // Mobile bottom nav
+  if (!document.getElementById('mobile-nav')) {
+    const nav = document.createElement('nav');
+    nav.className = 'mobile-nav';
+    nav.id = 'mobile-nav';
+    nav.innerHTML = `
+      <a href="/" class="highlight"><span class="mni">⚡</span>Home</a>
+      <a href="/video"><span class="mni">📺</span>Movies</a>
+      <a href="/ai"><span class="mni">🤖</span>AI</a>
+      <a href="/gaming"><span class="mni">🎮</span>Gaming</a>
+      <a href="/beginners-guide"><span class="mni">🌱</span>Guide</a>`;
+    document.body.appendChild(nav);
+  }
+
+  // Mobile drawer (full nav)
+  if (!document.getElementById('mob-drawer')) {
+    const drawer = document.createElement('div');
+    drawer.className = 'mob-drawer';
+    drawer.id = 'mob-drawer';
+    drawer.innerHTML = `<div class="lnav" id="mob-lnav"></div>`;
+    document.body.appendChild(drawer);
+    // Render left nav inside drawer too
+    const tmp = document.getElementById('lnav');
+    document.getElementById('mob-lnav').innerHTML = tmp ? tmp.innerHTML : '';
+  }
+
+  // Active state for bottom nav
+  const p = location.pathname;
+  document.querySelectorAll('.mobile-nav a').forEach(a => {
+    if (a.getAttribute('href') === p) a.classList.add('active');
+  });
+
+  // Mobile ad — inject full-width ad card after first tool section
+  document.querySelectorAll('.tool-section').forEach((sec, i) => {
+    if (i === 1 && !sec.querySelector('.mob-ad-card')) {
+      const ad = document.createElement('div');
+      ad.className = 'mob-ad-card';
+      ad.innerHTML = `<div class="ad-label">Advertisement</div>
+        <div class="ad-placeholder" style="width:100%;min-height:100px;background:var(--bg);border:1px dashed var(--border2);border-radius:7px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:.7rem;font-family:var(--fm)">Ads</div>`;
+      sec.after(ad);
+    }
+  });
+}
+
+function toggleMobMenu() {
+  const drawer = document.getElementById('mob-drawer');
+  const btn = document.getElementById('mob-btn');
+  if (!drawer) return;
+  const open = drawer.classList.toggle('open');
+  btn.textContent = open ? '✕' : '☰';
+  document.body.style.overflow = open ? 'hidden' : '';
+}
+
 function renderFooter() {
   document.getElementById('footer-ad').innerHTML = `<div class="ad-strip">${AD.mid}</div>`;
   document.getElementById('footer').innerHTML = `
@@ -222,17 +277,27 @@ function renderFooter() {
     </div>
   </footer>
   <!-- STICKY BOTTOM MOBILE AD — Adsterra 320x50 or Social Bar -->
-  <div id="sticky-bottom-ad" style="position:fixed;bottom:0;left:0;right:0;display:flex;justify-content:center;background:var(--bg2);border-top:1px solid var(--border);padding:6px;z-index:999;display:none">
+  <div id="sticky-bottom-ad" style="position:fixed;bottom:0;left:0;right:0;display:none;justify-content:center;align-items:center;background:var(--bg);border-top:1px solid var(--accent);padding:8px 12px;z-index:290">
     ${AD.mobile}
     <button onclick="document.getElementById('sticky-bottom-ad').style.display='none'"
-      style="position:absolute;top:4px;right:8px;background:none;border:none;color:var(--muted);cursor:pointer;font-size:.8rem">✕</button>
+      style="position:absolute;top:4px;right:8px;background:none;border:none;color:var(--muted);cursor:pointer;font-size:.85rem;line-height:1">✕</button>
   </div>
   <script>
-    // Show sticky bottom ad after 5 seconds
-    setTimeout(()=>{
-      const el = document.getElementById('sticky-bottom-ad');
-      if(el) el.style.display='flex';
-    }, 5000);
+    // On mobile, push sticky ad above the bottom nav (56px)
+    (function(){
+      function positionStickyAd(){
+        const el = document.getElementById('sticky-bottom-ad');
+        if(!el) return;
+        const isMobile = window.innerWidth <= 780;
+        el.style.bottom = isMobile ? '56px' : '0px';
+      }
+      // Show after 4 seconds
+      setTimeout(()=>{
+        const el = document.getElementById('sticky-bottom-ad');
+        if(el){ positionStickyAd(); el.style.display='flex'; }
+      }, 4000);
+      window.addEventListener('resize', positionStickyAd);
+    })();
   </script>`;
 }
 
@@ -305,6 +370,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   initSearch('hs','sr');
   initSearch('ts','sr2');
+  renderMobileUI();
 });
 
 /* ── VISITOR TRACKER ──────────────────────────────────── */
